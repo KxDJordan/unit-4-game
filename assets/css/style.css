@@ -1,0 +1,106 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-size: 1600px 730px;
+ }
+
+h1 {
+    font-size: 56px;
+    color: red;
+}
+
+h2 {
+    font-size: 32px;
+    color: red;
+}
+
+#Header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    height: 80px;
+}
+
+.CharacterSelect {
+    width: 100%;
+    float: left;
+    height: 50px;
+    margin: 0px 0px 20px 20px;
+}
+
+.EnemySelect {
+    width: 100%;
+    float: left;
+    margin-top: 130px;
+    margin-left: 20px;
+    height: 50px;
+}
+
+.FightSection {
+    width: 100%;
+    float: left;
+    margin-top: 130px;
+    margin-left: 20px;
+    height: 50px;
+}
+
+.DefenderArea {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 50px;
+}
+
+.BattleStatus {
+    width: 100%;
+    margin-left: 20px;
+    float: left;
+}
+
+#Char1, #Char2, #Char3, #Char4, #Char5 {
+    position: relative;
+    margin: 0px 20px 20px 0px;
+    float: left;
+    text-align: center;
+}
+
+#Enem1, #Enem2, #Enem3, #Enem4 {
+    position: relative;
+    margin: 0px 20px 20px 0px;
+    float: left;
+    text-align: center;
+}
+
+.charimg {
+    position: relative;
+    margin: 20px 20px 20px 20px;
+    float: left;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border:10px solid lightgray;
+}
+
+#tag1, #tag2, #tag3, #tag4, #tag5, #tag6, #tag7 {
+    float: left;
+    position: absolute;
+    top: 75%;
+    margin-left: 20px;
+    z-index: 10;
+    width: 120px;
+    height: 20px;
+    background-color: lightgrey;
+    font-size: 12px;
+    color: black;
+}
+
+p {
+    z-index: 12;
+    color: black;
+    font-size: 12px;
+}
+
+#BattleMsg {
+    color: white;
+    font-size: 24px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Star Wars RPG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="assets/javascript/game.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="Header">
+            <h1>Star Wars: Battle Arena</h1>
+        </div>
+        
+        <div class="CharacterSelect">
+            <h2>Select Your Character:</h2>
+
+            <div id="Char1">
+                <!-- <p class="BattleChar">Rey</p> -->
+                <img class="charimg" id="reyImg" src="assets/images/Rey.png">
+                <div id="tag1">100</div>
+            </div>
+            <div id="Char2">
+                <!-- <p class="BattleChar">Finn</p> -->
+                <img class="charimg" id="finnImg" src="assets/images/Finn.png">
+                <div id="tag2">125 </div>
+            </div>
+            <div id="Char3">
+                <!-- <p class="BattleChar">Obi-Wan</p> -->
+                <img class="charimg" id="obiwanImg" src="assets/images/Obi-Wan.png">
+                <div id="tag3">150 </div>
+            </div>
+        </div>
+
+        <div class="EnemySelect">
+            <h2>Available Enemies:</h2>
+
+            <div id="Enem1">
+                <img class="charimg" id="darthImg" src="assets/images/DarthVader.png">
+                <div id="tag4">120</div>
+            </div>
+            <div id="Enem2">
+                <img class="charimg" id="kyloImg" src="assets/images/KyloRen.png">
+                <div id="tag5">150</div>
+            </div>
+            <div id="Enem3">
+                <img class="charimg" id="troopImg" src="assets/images/Trooper.png">
+                <div id="tag6">100</div>
+            </div>
+            <div id="Enem4">
+                <img class="charimg" id="phasmaImg" src="assets/images/CaptainPhasma.png">
+                <div id="tag7">130</div>+
+            </div>
+        </div>
+
+        <div class="FightSection">
+            <h2>Fight Area:</h2>
+            <button type="button">Attack</button>
+        </div>
+
+        <div class="DefenderArea">
+            <h2>Defender:</h2>
+            <div id="Defender">
+
+            </div>
+        </div>
+
+        <div class="BattleStatus">
+            <h2>Status:</h2>  
+            <p id="BattleMsg"> </p>
+        </div>
+    </body>
+</html>
