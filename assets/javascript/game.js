@@ -57,6 +57,8 @@ var selectedEnemy = " ";
 var charHP = " ";
 var enemyHP = " ";
 var roundNumber = 1;
+// Skill Variables
+var endure = 1;
 
 $(function() {
     $("#reyImg").click(function() {
@@ -87,6 +89,16 @@ $(function() {
         }
     }
 
+    function skillActivate() {
+        if (selectedEnemy == DarthVader) {
+            if (endure == 1 && selectedEnemy.HealthPoints <= 0) {
+                endure = 0;
+                selectedEnemy.HealthPoints = 1;
+                $("#BattleMsg").append("<br> Darth Vader endured the hit with 1 HP");
+            }
+        }
+    }
+
     function dealDamage(x, y) {
         console.log(x);
         console.log(y);
@@ -98,6 +110,7 @@ $(function() {
             x. HealthPoints = x.HealthPoints - y.CounterAttackPower;
             $("#BattleMsg").append("<br> You took " + y.CounterAttackPower + " damage!");
             ++roundNumber;
+            skillActivate();
         } else if (x == " ") {
             $("#BattleMsg").html("Please choose a character");
         } else {
