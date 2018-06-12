@@ -24,26 +24,26 @@ var ObiWan = {
 
 var DarthVader = {
     Name: "Darth Vader",
-    HealthPoints: 120,
+    HealthPoints: 150,
     CounterAttackPower: 25
 }
 
 var KyloRen = {
     Name: "Kylo Ren",
-    HealthPoints: 150,
-    CounterAttackPower: 35
+    HealthPoints: 120,
+    CounterAttackPower: 15
 }
 
 var Trooper = {
     Name: "Trooper",
-    HealthPoints: 100,
+    HealthPoints: 80,
     CounterAttackPower: 5
 }
 
 var Phasma = {
     Name: "Capt. Phasma",
-    HealthPoints: 130,
-    CounterAttackPower: 15
+    HealthPoints: 110,
+    CounterAttackPower: 10
 }
 
 var selectedChar = " ";
@@ -82,12 +82,15 @@ $(function() {
     }
 
     function dealDamage(x, y) {
-        if (x && y !== " ") {
+        console.log(x);
+        console.log(y);
+        if (x !== " " && y !== " ") {
             y.HealthPoints = y.HealthPoints - x.CounterAttackPower;
             $("#BattleMsg").html("You dealt " + x.CounterAttackPower + " damage!");
             x.CounterAttackPower = x.CounterAttackPower + (x.AttackPower * roundNumber);
+            console.log(x.CounterAttackPower);
             x. HealthPoints = x.HealthPoints - y.CounterAttackPower;
-           // $("#BattleMsg").html("You took " + y.CounterAttackPower + " damage!");
+            $("#BattleMsg").append("<br> You took " + y.CounterAttackPower + " damage!");
             ++roundNumber;
         } else if (x == " ") {
             $("#BattleMsg").html("Please choose a character");
@@ -130,7 +133,7 @@ $(function() {
             $("#BattleMsg").html("You Lose!");
             window.location.reload(true);
         } else if (y.HealthPoints <= 0) {
-            $("#BattleMsg").html("You win! Choose next opponent.");
+            $("#BattleMsg").append("<br> You win! Choose next opponent.");
             if (selectedEnemy == DarthVader) {
                 $("#Enem1").hide();
             } else if (selectedEnemy == KyloRen) {

@@ -94,6 +94,19 @@ h2 {
     color: black;
 }
 
+#name1, #name2, #name3, #name4, #name5, #name6, #name7 {
+    float: left;
+    position: absolute;
+    top: 5%;
+    margin-left: 20px;
+    z-index: 10;
+    width: 120px;
+    height: 20px;
+    background-color: lightgrey;
+    font-size: 18px;
+    color: black;
+}
+
 p {
     z-index: 12;
     color: black;
