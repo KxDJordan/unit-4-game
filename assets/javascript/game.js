@@ -46,6 +46,12 @@ var Phasma = {
     CounterAttackPower: 10
 }
 
+var Assassin = {
+    Name: "Assassin",
+    HealthPoints: 130,
+    CounterAttackPower: 30
+}
+
 var selectedChar = " ";
 var selectedEnemy = " ";
 var charHP = " ";
@@ -125,6 +131,10 @@ $(function() {
                 break;
             case Phasma:
                 $("#tag7").html(Phasma.HealthPoints);
+                break;
+            case Assassin:
+                $("#tag8").html(Assassin.HealthPoints);
+                break;
         }
     }
 
@@ -140,8 +150,10 @@ $(function() {
                 $("#Enem2").hide();
             } else if (selectedEnemy == Trooper) {
                 $("#Enem3").hide();
-            } else if (selectedEnemy = Phasma) {
+            } else if (selectedEnemy == Phasma) {
                 $("#Enem4").hide();
+            } else if (selectedEnemy == Assassin) {
+                $("#Enem5").hide();
             }
             selectedEnemy = " ";
         }
@@ -159,7 +171,9 @@ $(function() {
     $("#phasmaImg").click(function() {
         defenderSelect($("#Enem4"),Phasma);
     })
-    
+    $("#assasImg").click(function() {
+        defenderSelect($("#Enem5"),Assassin);
+    })
 
     $(":button").click(function() {
         dealDamage(selectedChar, selectedEnemy);

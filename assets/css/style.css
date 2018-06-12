@@ -64,7 +64,7 @@ h2 {
     text-align: center;
 }
 
-#Enem1, #Enem2, #Enem3, #Enem4 {
+#Enem1, #Enem2, #Enem3, #Enem4, #Enem5 {
     position: relative;
     margin: 0px 20px 20px 0px;
     float: left;
@@ -94,7 +94,7 @@ h2 {
     color: black;
 }
 
-#name1, #name2, #name3, #name4, #name5, #name6, #name7 {
+#name1, #name2, #name3, #name4, #name5, #name6, #name7, #name8 {
     float: left;
     position: absolute;
     top: 5%;
