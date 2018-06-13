@@ -108,7 +108,7 @@ $(function() {
         } else if (selectedEnemy == KyloRen) {
             forceDrain = 1;
             if (forceDrain == 1) {
-                drainedHP = selectedEnemy.CounterAttackPower / 2;
+                drainedHP = selectedEnemy.CounterAttackPower;
                 selectedEnemy.HealthPoints = selectedEnemy.HealthPoints + drainedHP;
                 $("#BattleMsg").append("<br> Kylo drained you for " + drainedHP + " HP!");
                 forceDrain = 0;
