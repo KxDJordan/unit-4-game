@@ -60,6 +60,7 @@ var roundNumber = 1;
 // Skill Variables
 var endure = 1;
 var doubleStrike = 1;
+var forceDrain = 0;
 
 $(function() {
     $("#reyImg").click(function() {
@@ -103,6 +104,14 @@ $(function() {
                 x.HealthPoints = x.HealthPoints - Assassin.CounterAttackPower;
                 doubleStrike--;
                 $("#BattleMsg").append("<br> Assassin striked you again for " + Assassin.CounterAttackPower + " damage!");
+            }
+        } else if (selectedEnemy == KyloRen) {
+            forceDrain = 1;
+            if (forceDrain == 1) {
+                drainedHP = selectedEnemy.HealthPoints + (selectedEnemy.CounterAttackPower / 2)
+                selectedEnemy.HealthPoints = selectedEnemy.HealthPoints + drainedHP;
+                $("#BattleMsg").append("<br> Kylo drained you for " + drainedHP + " HP!");
+                forceDrain = 0;
             }
         }
     }
