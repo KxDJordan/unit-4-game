@@ -59,6 +59,7 @@ var enemyHP = " ";
 var roundNumber = 1;
 // Skill Variables
 var endure = 1;
+var doubleStrike = 1;
 
 $(function() {
     $("#reyImg").click(function() {
@@ -95,6 +96,13 @@ $(function() {
                 endure = 0;
                 selectedEnemy.HealthPoints = 1;
                 $("#BattleMsg").append("<br> Darth Vader endured the hit with 1 HP");
+            }
+        } else if (selectedEnemy == Assassin) {
+            if (doubleStrike == 1) {
+                x = selectedChar;
+                x.HealthPoints = x.HealthPoints - Assassin.CounterAttackPower;
+                doubleStrike--;
+                $("#BattleMsg").append("<br> Assassin striked you again for " + Assassin.CounterAttackPower + " damage!");
             }
         }
     }
