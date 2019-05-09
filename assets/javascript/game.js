@@ -1,66 +1,12 @@
-
-var Rey = {
-    Name: "Rey",
-    HealthPoints: 100,
-    AttackPower: 10,
-    CounterAttackPower: 10
-}
-
-var Finn = {
-    Name: "Finn",
-    HealthPoints: 125,
-    AttackPower: 15,
-    CounterAttackPower: 15
-}
-
-var ObiWan = {
-    Name: "Obi-Wan",
-    HealthPoints: 150,
-    AttackPower: 5,
-    CounterAttackPower: 5
-}
-
-// Enemy Characters
-
-var DarthVader = {
-    Name: "Darth Vader",
-    HealthPoints: 150,
-    CounterAttackPower: 25
-}
-
-var KyloRen = {
-    Name: "Kylo Ren",
-    HealthPoints: 120,
-    CounterAttackPower: 15
-}
-
-var Trooper = {
-    Name: "Trooper",
-    HealthPoints: 80,
-    CounterAttackPower: 5
-}
-
-var Phasma = {
-    Name: "Capt. Phasma",
-    HealthPoints: 110,
-    CounterAttackPower: 10
-}
-
-var Assassin = {
-    Name: "Assassin",
-    HealthPoints: 130,
-    CounterAttackPower: 30
-}
-
-var selectedChar = " ";
-var selectedEnemy = " ";
-var charHP = " ";
-var enemyHP = " ";
-var roundNumber = 1;
-// Skill Variables
-var endure = 1;
-var doubleStrike = 1;
-var forceDrain = 0;
+let selectedChar = " ";
+let selectedEnemy = " ";
+let charHP = " ";
+let enemyHP = " ";
+let roundNumber = 1;
+// Skill letiables
+let endure = 1;
+let doubleStrike = 1;
+let forceDrain = 0;
 
 $(function() {
     $("#reyImg").click(function() {
