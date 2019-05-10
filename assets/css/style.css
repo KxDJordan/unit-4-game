@@ -5,12 +5,12 @@ body {
 
 h1 {
     font-size: 56px;
-    color: red;
+    color: white;
 }
 
 h2 {
     font-size: 32px;
-    color: red;
+    color: white;
 }
 
 #Header {
@@ -57,14 +57,14 @@ h2 {
     float: left;
 }
 
-#Char1, #Char2, #Char3, #Char4, #Char5 {
+#Char0, #Char1, #Char2, #Char3, #Char4 {
     position: relative;
     margin: 0px 20px 20px 0px;
     float: left;
     text-align: center;
 }
 
-#Enem1, #Enem2, #Enem3, #Enem4, #Enem5 {
+#Enem0, #Enem1, #Enem2, #Enem3, #Enem4, #Enem5, #Enem6, #Enem7{
     position: relative;
     margin: 0px 20px 20px 0px;
     float: left;
@@ -94,7 +94,20 @@ h2 {
     color: black;
 }
 
-#name1, #name2, #name3, #name4, #name5, #name6, #name7, #name8 {
+#name0, #name1, #name2, #name3, #name4, #name5, #name6, #name7 {
+    float: left;
+    position: absolute;
+    top: 5%;
+    margin-left: 20px;
+    z-index: 10;
+    width: 120px;
+    height: 20px;
+    background-color: lightgrey;
+    font-size: 18px;
+    color: black;
+}
+
+#Ename0, #Ename1, #Ename2, #Ename3, #Ename4, #Ename5, #Ename6, #Ename7 {
     float: left;
     position: absolute;
     top: 5%;

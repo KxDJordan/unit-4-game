@@ -3,7 +3,7 @@ let selectedEnemy = " ";
 let charHP = " ";
 let enemyHP = " ";
 let roundNumber = 1;
-// Skill letiables
+// Skill variables
 let endure = 1;
 let doubleStrike = 1;
 let forceDrain = 0;
