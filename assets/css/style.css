@@ -13,6 +13,14 @@ h2 {
     color: white;
 }
 
+.selected {
+    border: 10px solid lightgreen !important;
+}
+
+.textselected {
+    background-color: lightgreen !important;
+}
+
 #Header {
     width: 100%;
     margin: auto;
@@ -79,17 +87,42 @@ h2 {
     width: 100px;
     height: 100px;
     border:10px solid lightgray;
+    border-bottom-width: 15px !important;
 }
 
-#tag1, #tag2, #tag3, #tag4, #tag5, #tag6, #tag7, #tag8 {
+.enemimg {
+    position: relative;
+    margin: 20px 20px 20px 20px;
+    float: left;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border:10px solid lightgray;
+    border-bottom-width: 15px !important;
+}
+
+#tag0, #tag1, #tag2, #tag3, #tag4, #tag5, #tag6, #tag7 {
     float: left;
     position: absolute;
-    top: 75%;
+    top: 80%;
     margin-left: 20px;
     z-index: 10;
-    width: 120px;
+    width: 60px;
     height: 20px;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
+    font-size: 12px;
+    color: black;
+}
+
+#atag0, #atag1, #atag2, #atag3, #atag4, #atag5, #atag6, #atag7 {
+    float: left;
+    position: absolute;
+    top: 80%;
+    margin-left: 80px;
+    z-index: 10;
+    width: 60px;
+    height: 20px;
+    /* background-color: lightgrey; */
     font-size: 12px;
     color: black;
 }

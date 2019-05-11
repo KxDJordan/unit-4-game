@@ -3,28 +3,37 @@ let selectedEnemy = " ";
 let charHP = " ";
 let enemyHP = " ";
 let roundNumber = 1;
-// Skill variables
+let selected = 0; // 0 = No heroes selected yet
+// Hero Skill variables
+let punch = 1; //Hero1
+// Monster Skill variables
 let endure = 1;
 let doubleStrike = 1;
 let forceDrain = 0;
+// Boss Skill variables
+let fireBreath = 1; //Boss1 (Dragon)
 
 $(function() {
-    $("#reyImg").click(function() {
-        charHP = $("#tag1");
-        $("#Char2").hide();
-        $("#Char3").hide();
-        selectedChar = Rey;
-    })
-    $("#finnImg").click(function() {
-        $("#Char1").hide();
-        $("#Char3").hide();
-        selectedChar = Finn;
-    })
-    $("#obiwanImg").click(function() {
-        $("#Char1").hide();
-        $("#Char2").hide();
-        selectedChar = ObiWan;
-    })
+
+    // Select characters
+    $('.charimg').click(this.id, function() {
+        let clickedChar = $(`#${this.id}`);
+        let clickedCharClass = clickedChar.attr('id');
+        console.log(clickedChar,clickedCharClass);
+        if (selected === 2 && !clickedChar.hasClass('selected')) {
+            $("#BattleMsg").html("Please remove a character from your group first.");
+        } else {
+            if ( clickedChar.hasClass('selected') ) {
+                clickedChar.removeClass('selected');
+                $(`.${clickedCharClass}`).removeClass('textselected');
+                selected-- ;
+            } else {
+                clickedChar.addClass('selected');
+                $(`.${clickedCharClass}`).addClass('textselected');
+                selected++ ;
+            }
+        }
+      });
 
     function defenderSelect(elem, obj) {
         if (selectedEnemy === " ") {
@@ -38,28 +47,28 @@ $(function() {
     }
 
     function skillActivate() {
-        if (selectedEnemy == DarthVader) {
-            if (endure == 1 && selectedEnemy.HealthPoints <= 0) {
-                endure = 0;
-                selectedEnemy.HealthPoints = 1;
-                $("#BattleMsg").append("<br> Darth Vader endured the hit with 1 HP");
-            }
-        } else if (selectedEnemy == Assassin) {
-            if (doubleStrike == 1) {
-                x = selectedChar;
-                x.HealthPoints = x.HealthPoints - Assassin.CounterAttackPower;
-                doubleStrike--;
-                $("#BattleMsg").append("<br> Assassin striked you again for " + Assassin.CounterAttackPower + " damage!");
-            }
-        } else if (selectedEnemy == KyloRen) {
-            forceDrain = 1;
-            if (forceDrain == 1) {
-                drainedHP = selectedEnemy.CounterAttackPower;
-                selectedEnemy.HealthPoints = selectedEnemy.HealthPoints + drainedHP;
-                $("#BattleMsg").append("<br> Kylo drained you for " + drainedHP + " HP!");
-                forceDrain = 0;
-            }
-        }
+        // if (selectedEnemy == DarthVader) {
+        //     if (endure == 1 && selectedEnemy.HealthPoints <= 0) {
+        //         endure = 0;
+        //         selectedEnemy.HealthPoints = 1;
+        //         $("#BattleMsg").append("<br> Darth Vader endured the hit with 1 HP");
+        //     }
+        // } else if (selectedEnemy == Assassin) {
+        //     if (doubleStrike == 1) {
+        //         x = selectedChar;
+        //         x.HealthPoints = x.HealthPoints - Assassin.CounterAttackPower;
+        //         doubleStrike--;
+        //         $("#BattleMsg").append("<br> Assassin striked you again for " + Assassin.CounterAttackPower + " damage!");
+        //     }
+        // } else if (selectedEnemy == KyloRen) {
+        //     forceDrain = 1;
+        //     if (forceDrain == 1) {
+        //         drainedHP = selectedEnemy.CounterAttackPower;
+        //         selectedEnemy.HealthPoints = selectedEnemy.HealthPoints + drainedHP;
+        //         $("#BattleMsg").append("<br> Kylo drained you for " + drainedHP + " HP!");
+        //         forceDrain = 0;
+        //     }
+        // }
     }
 
     function dealDamage(x, y) {
