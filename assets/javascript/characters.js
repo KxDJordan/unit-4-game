@@ -37,8 +37,8 @@ const characterlist = [
     Gladiator = {
         Name: "Gladiator",
         HealthPoints: 200,
-        AttackPower: 5,
-        CounterAttackPower: 5,
+        AttackPower: 50,
+        CounterAttackPower: 50,
         CharImage: "assets/images/characters/Hero5.png"
     },
 
@@ -113,7 +113,7 @@ $(document).ready(function() {
         $(`<div id="Enem${i}">`).appendTo('.EnemySelect');
         $(`<p class="${enemylist[i].Name}" id="Ename${i}">${enemylist[i].Name}</p>`).appendTo(`#Enem${i}`);
         $(`<img class="enemimg" id="${enemylist[i].Name}" src="${enemylist[i].CharImage}">`).appendTo(`#Enem${i}`);
-        $(`<p id="tag${i}">${enemylist[i].HealthPoints}</p>`).appendTo(`#Enem${i}`);
-        $(`<p id="atag${i}">${enemylist[i].CounterAttackPower}</p>`).appendTo(`#Enem${i}`);
+        $(`<p id="etag${i}">${enemylist[i].HealthPoints}</p>`).appendTo(`#Enem${i}`);
+        $(`<p id="eatag${i}">${enemylist[i].CounterAttackPower}</p>`).appendTo(`#Enem${i}`);
     }
 });

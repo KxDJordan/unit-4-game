@@ -41,7 +41,6 @@ $(function() {
     $('.enemimg').click(this.id, function() {
         let clickedEnem = $(`#${this.id}`);
         let clickedEnemClass = clickedEnem.attr('id');
-        console.log(clickedEnem,clickedEnemClass);
         if (eselected === 1 && !clickedEnem.hasClass('selected')) {
             $("#BattleMsg").html("Please deslect an enemy first.");
         } else {
@@ -54,22 +53,10 @@ $(function() {
                 clickedEnem.addClass('selected');
                 $(`.${clickedEnemClass}`).addClass('textselected');
                 selectedEnemy = clickedEnemClass;
-                console.log(selectedEnemy);
                 eselected++ ;
             }
         }
       });
-
-    function defenderSelect(elem, obj) {
-        if (selectedEnemy === " ") {
-            $(elem).appendTo("#Defender");
-            $(".BattleStatus").css("margin-top", "130px");
-            selectedEnemy = obj;
-            console.log(selectedEnemy);
-        } else {
-            $("#BattleMsg").html("You already have an opponent!");
-        }
-    }
 
     function skillActivate() {
         // if (selectedEnemy == DarthVader) {
@@ -96,16 +83,51 @@ $(function() {
         // }
     }
 
+    // Finds index of "attr(character name)" in "array(either characterlist or enemylist)"
+    function findInArray(array, attr) {
+        for ( let i = 0; i < array.length; i++ ) {
+            if ( array[i].Name == attr.toString() ) {
+                return i;
+            }
+        }
+    }
+
+    // Returns player object from characterlist
+    function pullPlayerObj(x) {
+        let index = findInArray(characterlist, x);
+        let character = characterlist[index];
+        return character;
+    }
+
+    // Returns enemy object from enemylist
+    function pullEnemyObj(y) {
+        let eindex = findInArray(enemylist, y);
+        let enemy = enemylist[eindex];
+        return enemy;
+    }
+
+    // Returns player character index in characterlist
+    function pullPlayerIndex(x) {
+        let index = findInArray(characterlist, x);
+        return index;
+    }
+
+    // Returns enemy character index in enemylist
+    function pullEnemyIndex(y) {
+        let eindex = findInArray(enemylist, y);
+        return eindex;
+    }
+
+    // Handles calculating damage dealt
     function dealDamage(x, y) {
-        console.log(x);
-        console.log(y);
+        let enemy = pullEnemyObj(y);
+        let character = pullPlayerObj(x);
         if (x !== " " && y !== " ") {
-            y.HealthPoints = y.HealthPoints - x.CounterAttackPower;
-            $("#BattleMsg").html("You dealt " + x.CounterAttackPower + " damage!");
-            x.CounterAttackPower = x.CounterAttackPower + (x.AttackPower * roundNumber);
-            console.log(x.CounterAttackPower);
-            x. HealthPoints = x.HealthPoints - y.CounterAttackPower;
-            $("#BattleMsg").append("<br> You took " + y.CounterAttackPower + " damage!");
+            enemy.HealthPoints = enemy.HealthPoints - character.CounterAttackPower;
+            $("#BattleMsg").html("You dealt " + character.CounterAttackPower + " damage!");
+            character.CounterAttackPower = character.CounterAttackPower + (character.AttackPower * roundNumber);
+            character.HealthPoints = character.HealthPoints - enemy.CounterAttackPower;
+            $("#BattleMsg").append("<br> You took " + enemy.CounterAttackPower + " damage!");
             ++roundNumber;
             skillActivate();
         } else if (x == " ") {
@@ -115,75 +137,37 @@ $(function() {
         }
     }
 
+    // Updates selected character and enemy "HP" and "ATTACK"
     function refreshStats(x, y) {
-        // switch (x) {
-        //     case Rey:
-        //         $("#tag1").html(Rey.HealthPoints);
-        //         break;
-        //     case Finn:
-        //         $("#tag2").html(Finn.HealthPoints);
-        //         break;
-        //     case ObiWan:
-        //         $("#tag3").html(ObiWan.HealthPoints);
-        //         break;
-        //     default:
-        //         break;
-        // }
-        // switch (y) {
-        //     case DarthVader:
-        //         $("#tag4").html(DarthVader.HealthPoints);
-        //         break;
-        //     case KyloRen:
-        //         $("#tag5").html(KyloRen.HealthPoints);
-        //         break;
-        //     case Trooper:
-        //         $("#tag6").html(Trooper.HealthPoints);
-        //         break;
-        //     case Phasma:
-        //         $("#tag7").html(Phasma.HealthPoints);
-        //         break;
-        //     case Assassin:
-        //         $("#tag8").html(Assassin.HealthPoints);
-        //         break;
-        // }
+        let eindex = pullEnemyIndex(y);
+        let pindex = pullPlayerIndex(x);
+        $(`#tag${pindex}`).html(characterlist[pindex].HealthPoints);
+        $(`#atag${pindex}`).html(characterlist[pindex].CounterAttackPower);  
+        $(`#etag${eindex}`).html(enemylist[eindex].HealthPoints);
+        $(`#eatag${eindex}`).html(enemylist[eindex].CounterAttackPower);  
     }
 
+    // Checks for results of battle
     function resultCheck(x, y) {
-        if (x.HealthPoints <= 0) {
-            $("#BattleMsg").html("You Lose!");
+        let enemy = pullEnemyObj(y);
+        let character = pullPlayerObj(x);
+        let eindex = pullEnemyIndex(y);
+        let pindex = pullPlayerIndex(x);
+        if (character.HealthPoints <= 0) {
+            $("#BattleMsg").html("You Lose! Choose another character!");
+            selectedChar = " ";
+            selected--;
             window.location.reload(true);
-        } else if (y.HealthPoints <= 0) {
+            // if (totalCharacters === 0) {
+            //     window.location.reload(true);
+            // }
+        } else if (enemy.HealthPoints <= 0) {
             $("#BattleMsg").append("<br> You win! Choose next opponent.");
-            if (selectedEnemy == DarthVader) {
-                $("#Enem1").hide();
-            } else if (selectedEnemy == KyloRen) {
-                $("#Enem2").hide();
-            } else if (selectedEnemy == Trooper) {
-                $("#Enem3").hide();
-            } else if (selectedEnemy == Phasma) {
-                $("#Enem4").hide();
-            } else if (selectedEnemy == Assassin) {
-                $("#Enem5").hide();
-            }
+            $(`#Enem${eindex}`).hide();
             selectedEnemy = " ";
+            eselected--;
         }
     }
-    
-    $("#darthImg").click(function() {
-        defenderSelect($("#Enem1"),DarthVader);
-    })
-    $("#kyloImg").click(function() {
-        defenderSelect($("#Enem2"),KyloRen);
-    })
-    $("#troopImg").click(function() {
-        defenderSelect($("#Enem3"),Trooper);
-    })
-    $("#phasmaImg").click(function() {
-        defenderSelect($("#Enem4"),Phasma);
-    })
-    $("#assasImg").click(function() {
-        defenderSelect($("#Enem5"),Assassin);
-    })
 
     $(":button").click(function() {
         dealDamage(selectedChar, selectedEnemy);

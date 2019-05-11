@@ -127,6 +127,32 @@ h2 {
     color: black;
 }
 
+#etag0, #etag1, #etag2, #etag3, #etag4, #etag5, #etag6, #etag7 {
+    float: left;
+    position: absolute;
+    top: 80%;
+    margin-left: 20px;
+    z-index: 10;
+    width: 60px;
+    height: 20px;
+    /* background-color: lightgrey; */
+    font-size: 12px;
+    color: black;
+}
+
+#eatag0, #eatag1, #eatag2, #eatag3, #eatag4, #eatag5, #eatag6, #eatag7 {
+    float: left;
+    position: absolute;
+    top: 80%;
+    margin-left: 80px;
+    z-index: 10;
+    width: 60px;
+    height: 20px;
+    /* background-color: lightgrey; */
+    font-size: 12px;
+    color: black;
+}
+
 #name0, #name1, #name2, #name3, #name4, #name5, #name6, #name7 {
     float: left;
     position: absolute;
