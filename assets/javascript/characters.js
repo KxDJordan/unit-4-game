@@ -79,15 +79,17 @@ $(document).ready(function() {
     // Load all characters in "characterlist" on document load
     for (let i = 0; i < characterlist.length; i++) {
         $(`<div id="Char${i}">`).appendTo('.CharacterSelect');
-        $(`<p class="${characterlist[i].Name}Img" id="name${i}">${characterlist[i].Name}</p>`).appendTo(`#Char${i}`);
-        $(`<img class="charimg" id="${characterlist[i].Name}Img" src="${characterlist[i].CharImage}">`).appendTo(`#Char${i}`);
+        $(`<p class="${characterlist[i].Name}" id="name${i}">${characterlist[i].Name}</p>`).appendTo(`#Char${i}`);
+        $(`<img class="charimg" id="${characterlist[i].Name}" src="${characterlist[i].CharImage}">`).appendTo(`#Char${i}`);
         $(`<p id="tag${i}">${characterlist[i].HealthPoints}</p>`).appendTo(`#Char${i}`);
         $(`<p id="atag${i}">${characterlist[i].CounterAttackPower}</p>`).appendTo(`#Char${i}`);
     }
     // Load all enemies in "enemylist" on document load
     for (let i = 0; i < enemylist.length; i++) {
         $(`<div id="Enem${i}">`).appendTo('.EnemySelect');
-        $(`<p class="${enemylist[i].Name}Img" id="Ename${i}">${enemylist[i].Name}</p>`).appendTo(`#Enem${i}`);
-        $(`<img class="enemimg" id="${enemylist[i].Name}Img" src="${enemylist[i].CharImage}">`).appendTo(`#Enem${i}`);
+        $(`<p class="${enemylist[i].Name}" id="Ename${i}">${enemylist[i].Name}</p>`).appendTo(`#Enem${i}`);
+        $(`<img class="enemimg" id="${enemylist[i].Name}" src="${enemylist[i].CharImage}">`).appendTo(`#Enem${i}`);
+        $(`<p id="tag${i}">${enemylist[i].HealthPoints}</p>`).appendTo(`#Enem${i}`);
+        $(`<p id="atag${i}">${enemylist[i].CounterAttackPower}</p>`).appendTo(`#Enem${i}`);
     }
 });

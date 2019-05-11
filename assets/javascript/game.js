@@ -4,6 +4,7 @@ let charHP = " ";
 let enemyHP = " ";
 let roundNumber = 1;
 let selected = 0; // 0 = No heroes selected yet
+let eselected = 0; // 0 = No enenmies selected yet
 // Hero Skill variables
 let punch = 1; //Hero1
 // Monster Skill variables
@@ -19,18 +20,42 @@ $(function() {
     $('.charimg').click(this.id, function() {
         let clickedChar = $(`#${this.id}`);
         let clickedCharClass = clickedChar.attr('id');
-        console.log(clickedChar,clickedCharClass);
-        if (selected === 2 && !clickedChar.hasClass('selected')) {
+        if (selected === 1 && !clickedChar.hasClass('selected')) {
             $("#BattleMsg").html("Please remove a character from your group first.");
         } else {
             if ( clickedChar.hasClass('selected') ) {
                 clickedChar.removeClass('selected');
                 $(`.${clickedCharClass}`).removeClass('textselected');
+                selectedChar = " ";
                 selected-- ;
             } else {
                 clickedChar.addClass('selected');
                 $(`.${clickedCharClass}`).addClass('textselected');
+                selectedChar = clickedCharClass;
                 selected++ ;
+            }
+        }
+      });
+
+    // Select enemies
+    $('.enemimg').click(this.id, function() {
+        let clickedEnem = $(`#${this.id}`);
+        let clickedEnemClass = clickedEnem.attr('id');
+        console.log(clickedEnem,clickedEnemClass);
+        if (eselected === 1 && !clickedEnem.hasClass('selected')) {
+            $("#BattleMsg").html("Please deslect an enemy first.");
+        } else {
+            if ( clickedEnem.hasClass('selected') ) {
+                clickedEnem.removeClass('selected');
+                $(`.${clickedEnemClass}`).removeClass('textselected');
+                selectedEnemy = " ";
+                eselected-- ;
+            } else {
+                clickedEnem.addClass('selected');
+                $(`.${clickedEnemClass}`).addClass('textselected');
+                selectedEnemy = clickedEnemClass;
+                console.log(selectedEnemy);
+                eselected++ ;
             }
         }
       });
@@ -91,36 +116,36 @@ $(function() {
     }
 
     function refreshStats(x, y) {
-        switch (x) {
-            case Rey:
-                $("#tag1").html(Rey.HealthPoints);
-                break;
-            case Finn:
-                $("#tag2").html(Finn.HealthPoints);
-                break;
-            case ObiWan:
-                $("#tag3").html(ObiWan.HealthPoints);
-                break;
-            default:
-                break;
-        }
-        switch (y) {
-            case DarthVader:
-                $("#tag4").html(DarthVader.HealthPoints);
-                break;
-            case KyloRen:
-                $("#tag5").html(KyloRen.HealthPoints);
-                break;
-            case Trooper:
-                $("#tag6").html(Trooper.HealthPoints);
-                break;
-            case Phasma:
-                $("#tag7").html(Phasma.HealthPoints);
-                break;
-            case Assassin:
-                $("#tag8").html(Assassin.HealthPoints);
-                break;
-        }
+        // switch (x) {
+        //     case Rey:
+        //         $("#tag1").html(Rey.HealthPoints);
+        //         break;
+        //     case Finn:
+        //         $("#tag2").html(Finn.HealthPoints);
+        //         break;
+        //     case ObiWan:
+        //         $("#tag3").html(ObiWan.HealthPoints);
+        //         break;
+        //     default:
+        //         break;
+        // }
+        // switch (y) {
+        //     case DarthVader:
+        //         $("#tag4").html(DarthVader.HealthPoints);
+        //         break;
+        //     case KyloRen:
+        //         $("#tag5").html(KyloRen.HealthPoints);
+        //         break;
+        //     case Trooper:
+        //         $("#tag6").html(Trooper.HealthPoints);
+        //         break;
+        //     case Phasma:
+        //         $("#tag7").html(Phasma.HealthPoints);
+        //         break;
+        //     case Assassin:
+        //         $("#tag8").html(Assassin.HealthPoints);
+        //         break;
+        // }
     }
 
     function resultCheck(x, y) {
