@@ -25,6 +25,30 @@ const characterlist = [
         CounterAttackPower: 5,
         CharImage: "assets/images/characters/Hero3.png"
     },
+
+    Archer = {
+        Name: "Archer",
+        HealthPoints: 125,
+        AttackPower: 20,
+        CounterAttackPower: 20,
+        CharImage: "assets/images/characters/Hero4.png"
+    },
+
+    Gladiator = {
+        Name: "Gladiator",
+        HealthPoints: 200,
+        AttackPower: 5,
+        CounterAttackPower: 5,
+        CharImage: "assets/images/characters/Hero5.png"
+    },
+
+    Knight = {
+        Name: "Knight",
+        HealthPoints: 150,
+        AttackPower: 125,
+        CounterAttackPower: 15,
+        CharImage: "assets/images/characters/Hero6.png"
+    },
 ];
 
     // Enemy Characters

@@ -65,14 +65,14 @@ h2 {
     float: left;
 }
 
-#Char0, #Char1, #Char2, #Char3, #Char4 {
+#Char0, #Char1, #Char2, #Char3, #Char4, #Char5, #Char6, #Char7 {
     position: relative;
     margin: 0px 20px 20px 0px;
     float: left;
     text-align: center;
 }
 
-#Enem0, #Enem1, #Enem2, #Enem3, #Enem4, #Enem5, #Enem6, #Enem7{
+#Enem0, #Enem1, #Enem2, #Enem3, #Enem4, #Enem5, #Enem6, #Enem7 {
     position: relative;
     margin: 0px 20px 20px 0px;
     float: left;
