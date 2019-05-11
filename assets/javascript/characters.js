@@ -45,7 +45,7 @@ const characterlist = [
     Knight = {
         Name: "Knight",
         HealthPoints: 150,
-        AttackPower: 125,
+        AttackPower: 15,
         CounterAttackPower: 15,
         CharImage: "assets/images/characters/Hero6.png"
     },
