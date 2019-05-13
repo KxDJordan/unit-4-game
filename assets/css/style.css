@@ -46,7 +46,7 @@ h2 {
 .FightSection {
     width: 100%;
     float: left;
-    margin-top: 130px;
+    margin-top: 350px;
     margin-left: 20px;
     height: 50px;
 }
@@ -65,14 +65,14 @@ h2 {
     float: left;
 }
 
-#Char0, #Char1, #Char2, #Char3, #Char4, #Char5, #Char6, #Char7 {
+#Char0, #Char1, #Char2, #Char3, #Char4, #Char5, #Char6, #Char7, #Char8, #Char9, #Char10, #Char11, #Char12, #Char13 {
     position: relative;
     margin: 0px 20px 20px 0px;
     float: left;
     text-align: center;
 }
 
-#Enem0, #Enem1, #Enem2, #Enem3, #Enem4, #Enem5, #Enem6, #Enem7 {
+#Enem0, #Enem1, #Enem2, #Enem3, #Enem4, #Enem5, #Enem6, #Enem7, #Enem8, #Enem9, #Enem10, #Enem11, #Enem12, #Enem13 {
     position: relative;
     margin: 0px 20px 20px 0px;
     float: left;
@@ -101,7 +101,7 @@ h2 {
     border-bottom-width: 15px !important;
 }
 
-#tag0, #tag1, #tag2, #tag3, #tag4, #tag5, #tag6, #tag7 {
+#tag0, #tag1, #tag2, #tag3, #tag4, #tag5, #tag6, #tag7, #tag8, #tag9, #tag10, #tag11, #tag12, #tag13 {
     float: left;
     position: absolute;
     top: 80%;
@@ -114,7 +114,7 @@ h2 {
     color: black;
 }
 
-#atag0, #atag1, #atag2, #atag3, #atag4, #atag5, #atag6, #atag7 {
+#atag0, #atag1, #atag2, #atag3, #atag4, #atag5, #atag6, #atag7, #atag8, #atag9, #atag10, #atag11, #atag12, #atag13 {
     float: left;
     position: absolute;
     top: 80%;
@@ -127,7 +127,7 @@ h2 {
     color: black;
 }
 
-#etag0, #etag1, #etag2, #etag3, #etag4, #etag5, #etag6, #etag7 {
+#etag0, #etag1, #etag2, #etag3, #etag4, #etag5, #etag6, #etag7, #etag8, #etag9, #etag10, #etag11, #etag12, #etag13 {
     float: left;
     position: absolute;
     top: 80%;
@@ -140,7 +140,7 @@ h2 {
     color: black;
 }
 
-#eatag0, #eatag1, #eatag2, #eatag3, #eatag4, #eatag5, #eatag6, #eatag7 {
+#eatag0, #eatag1, #eatag2, #eatag3, #eatag4, #eatag5, #eatag6, #eatag7, #eatag8, #eatag9, #eatag10, #eatag11, #eatag12, #eatag13 {
     float: left;
     position: absolute;
     top: 80%;
@@ -153,7 +153,7 @@ h2 {
     color: black;
 }
 
-#name0, #name1, #name2, #name3, #name4, #name5, #name6, #name7 {
+#name0, #name1, #name2, #name3, #name4, #name5, #name6, #name7, #name8, #name9, #name10, #name11, #name12, #name13 {
     float: left;
     position: absolute;
     top: 5%;
@@ -166,7 +166,7 @@ h2 {
     color: black;
 }
 
-#Ename0, #Ename1, #Ename2, #Ename3, #Ename4, #Ename5, #Ename6, #Ename7 {
+#Ename0, #Ename1, #Ename2, #Ename3, #Ename4, #Ename5, #Ename6, #Ename7, #Ename8, #Ename9, #Ename10, #Ename11, #Ename12, #Ename13 {
     float: left;
     position: absolute;
     top: 5%;

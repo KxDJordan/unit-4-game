@@ -100,13 +100,15 @@ const enemylist = [
         Name: "Harpy",
         HealthPoints: 100,
         CounterAttackPower: 15,
-        CharImage: "assets/images/characters/Enemy9.png"
+        CharImage: "assets/images/characters/Enemy9.png",
     },
 
     Vampire = {
         Name: "Vampire",
         HealthPoints: 130,
-        AttackPower: 20
+        AttackPower: 20,
+        CounterAttackPower: 20,
+        CharImage: "assets/images/characters/Enemy10.png",
     },
 
     Dragon = {
