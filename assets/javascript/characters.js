@@ -61,10 +61,10 @@ const enemylist = [
         CharImage: "assets/images/characters/Enemy1.png"
     },
 
-    Harpy = {
-        Name: "Harpy",
-        HealthPoints: 100,
-        CounterAttackPower: 15,
+    Valkyrie = {
+        Name: "Valkyrie",
+        HealthPoints: 125,
+        CounterAttackPower: 25,
         CharImage: "assets/images/characters/Enemy2.png"
     },
 
@@ -89,12 +89,43 @@ const enemylist = [
         CharImage: "assets/images/characters/Enemy5.png"
     }, 
 
+    Centaur = {
+        Name: "Centaur",
+        HealthPoints: 150,
+        CounterAttackPower: 25,
+        CharImage: "assets/images/characters/Enemy7.png"
+    },
+
+    Harpy = {
+        Name: "Harpy",
+        HealthPoints: 100,
+        CounterAttackPower: 15,
+        CharImage: "assets/images/characters/Enemy9.png"
+    },
+
+    Vampire = {
+        Name: "Vampire",
+        HealthPoints: 130,
+        AttackPower: 20
+    },
+
     Dragon = {
         Name: "Dragon",
         HealthPoints: 400,
         CounterAttackPower: 50,
-        CharImage: "assets/images/characters/Boss1.png"
+        CharImage: "assets/images/characters/Boss1.png",
+        Type: "Boss",
     },
+
+    Magmastone = {
+        Name: "Magmastone",
+        HealthPoints: 650,
+        CounterAttackPower: 35,
+        CharImage: "assets/images/characters/Boss2.png",
+        Type: "Boss",
+    },
+
+
 ]
 
 
